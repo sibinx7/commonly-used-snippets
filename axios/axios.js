@@ -7,14 +7,8 @@ axios.interceptors.request.use(function (config) {
 	// Do something before request is sent
 	let metaTag, csrfTokenInput;
 	try{
-		if(typeof $ !=="undefined"){
-			metaTag = $("meta[name='csrf-token']").attr("content");
-			csrfTokenInput = $("[name='csrfmiddlewaretoken']").val();
-		}else{
-			metaTag = document.querySelector("meta[name='csrf-token']").content;
-			csrfTokenInput = document.querySelector("[name='csrfmiddlewaretoken']").value;
-		}
-
+		metaTag = document.querySelector("meta[name='csrf-token']").content;
+		csrfTokenInput = document.querySelector("[name='csrfmiddlewaretoken']").value;
 	}catch (e) {
 
 	}
@@ -39,7 +33,7 @@ axios.interceptors.response.use(function (response) {
 		if(["PATCH", "PUT", "POST", "DELETE"].indexOf((response.config.method).toUpperCase()) >= 0){
 			const { status } = response;
 			if(getResponseStatus(status, 400) || getResponseStatus(status, 500)){
-				toast.error("Something unexpected happened");
+				
 			}
 		}
 	}catch (e) {
