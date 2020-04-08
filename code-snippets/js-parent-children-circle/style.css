@@ -1,0 +1,36 @@
+.parent-outer{
+  padding: 100px;
+}
+#parent-circle{
+  border: 2px solid #ff0;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  position: relative;
+  /* padding: 40px; */
+  box-sizing: border-box;
+  
+}
+.parent-display-section{
+  width: calc(100% - 80px);
+  height: calc(100% - 80px);
+  position: absolute;
+  background: #eee;
+  top: 40px;
+  left: 40px;
+  border-radius: 50%;
+  z-index: 10;
+  display: -webkit-flex;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+}
+.child-circle{
+  border: 1px solid #000;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  background: pink;
+  cursor: pointer;
+}
