@@ -43,7 +43,7 @@ function generateCircles(children, dom, radius) {
   
   var child2Radius =  40;
   child2Radius = ((parentPerimeter - (children * requiredGap )))/children;
-  
+  child2Radius = (child2Radius/Math.PI)
   
   
   var updatedRadius = radius;
